@@ -115,6 +115,10 @@ fn main()
             println!("\tkv no subrutine func 2");
         }
         sub();
+        if has_sub_call
+        {
+            println!("\tno kv subrutine call");
+        }
 
         {
             i *= 2;
