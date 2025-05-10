@@ -29,10 +29,7 @@ jobs:
       with:
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
-        body: |
-          Changes in this Release
-          - First Change
-          - Second Change
+        body: '.'
         draft: true
         prerelease: false
     - name: Upload release asset
@@ -44,9 +41,10 @@ jobs:
         asset_path: ./target/debug/untitled
         asset_name: untitled
         asset_content_type: application/octet-stream
-    - name: Publish release
-      uses: StuYarrow/publish-release@v1.1.2
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        id: ${{ steps.create_release.outputs.id }}
+
+    # - name: Publish release
+    #   uses: StuYarrow/publish-release@v1.1.2
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   with:
+    #     id: ${{ steps.create_release.outputs.id }}
